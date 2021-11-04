@@ -1,0 +1,74 @@
+<html>
+<head>
+    <title>Sushi Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="hero">
+
+    <nav>
+        <div class="logo">
+            <img src="logo.png">
+        </div>
+        <button class="button">Order Now</button>
+        <img src="menu.png" class="menu-icon">
+    </nav>
+
+    <div class="row">
+        <div class="col-1">
+            <h1>Explore the<br>Best Sushi</h1>
+            <p>Find Your New Favorite Roll</p>
+            <button class="button">Explore Menu</button>
+
+
+            <ul>
+                <li class="btn active"></li>
+                <li class="btn"></li>
+                <li class="btn"></li>
+            </ul>
+        </div>
+        <div class="col-2">
+            <img src="image1.png" id="banner">
+        </div>
+    </div>
+
+</div>
+
+
+
+<script>
+    var btn = document.getElementsByClassName("btn");
+    var banner = document.getElementById("banner");
+
+    btn[0].onclick = function(){
+        banner.src = "image1.png";
+        animation();
+        this.classList.add("active");
+    }
+    btn[1].onclick = function(){
+        banner.src = "image2.png";
+        animation();
+        this.classList.add("active");
+    }
+    btn[2].onclick = function(){
+        banner.src = "image3.png";
+        animation();
+        this.classList.add("active");
+    }
+
+    function animation(){
+        banner.classList.add("zoom");
+        setTimeout(function(){
+            banner.classList.remove("zoom");
+        },500)
+
+        for(b of btn){
+            b.classList.remove("active");
+        }
+    }
+
+</script>
+
+</body>
+</html>
